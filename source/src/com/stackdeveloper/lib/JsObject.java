@@ -4,12 +4,15 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.webkit.JavascriptInterface;
 import android.webkit.WebView;
+import android.widget.Toast;
 
 public class JsObject 
 {
 	private Context mContext;
 	private WebView mWebView;
 	
+	private byte[] mDecodedImage;
+	private ImageDataResultHandler mImageDataResultHandler;
 	private WebViewHtmlContentHandler mWebViewHtmlContentHandler;
 	
 	public JsObject(Context context)
@@ -32,6 +35,26 @@ public class JsObject
 		mWebView.addJavascriptInterface(this, "jsObject");
 	}
 	
+
+	@JavascriptInterface
+	public void getBase64ImageString(String base64Image)
+	{
+		String cleanBase64Image = base64Image.replace("data:image/png;base64,", "");
+		try 
+		{
+		  mDecodedImage = android.util.Base64.decode(cleanBase64Image, android.util.Base64.DEFAULT);	
+		  if (mDecodedImage.length == 0) return;
+		  if (mDecodedImage != null) mImageDataResultHandler.onConvertComplete(mDecodedImage);
+		} catch (Exception e) 
+		{
+		  Toast.makeText(mContext, "Byte Conversion Error ! \n"+e.getMessage(), Toast.LENGTH_SHORT).show();
+		}
+	}
+	
+	public void addImageDataResultHandler(ImageDataResultHandler handler)
+	{
+		mImageDataResultHandler = handler;
+	}
 	
 	@JavascriptInterface
 	public void onGetHtmlContent(String html)
