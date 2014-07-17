@@ -10,7 +10,6 @@ public class JsObject
 {
 	private Context mContext;
 	private WebView mWebView;
-	
 	private byte[] mDecodedImage;
 	private ImageDataResultHandler mImageDataResultHandler;
 	private WebViewHtmlContentHandler mWebViewHtmlContentHandler;
@@ -35,7 +34,6 @@ public class JsObject
 		mWebView.addJavascriptInterface(this, "jsObject");
 	}
 	
-
 	@JavascriptInterface
 	public void getBase64ImageString(String base64Image)
 	{
@@ -83,6 +81,40 @@ public class JsObject
 		sb.append("  return objs;");
 		sb.append("}");
 		return sb.toString();
+	}
+	
+	public String jsDrawImage()
+	{
+		StringBuilder sb = new StringBuilder();
+		sb.append("var canvas = document.createElement(\"canvas\");");
+		sb.append("document.body.appendChild(canvas);");
+		sb.append("canvas.width = img.width;");
+		sb.append("canvas.height = img.height;");
+		sb.append("var ctx = canvas.getContext(\"2d\");");
+		sb.append("ctx.drawImage(img,0,0,img.clientWidth,img.clientHeight);");
+		sb.append("var dataURL = canvas.toDataURL();");
+		sb.append("jsObject.getBase64ImageString(dataURL.toString());");
+		return sb.toString();
+	}
+	
+	public void getCaptchaImageFromImgAttributeSrc(String src,ImageDataResultHandler handler)
+	{
+		mImageDataResultHandler = handler;
+		StringBuilder sb = new StringBuilder();
+		sb.append(jsElementsByAttributeName().toString());
+		sb.append("var img = getElementsByAttributeName('img', 'src', '"+src+"')[0];");
+		sb.append(jsDrawImage());
+		jsExecute(sb.toString());
+	}
+	
+	public void getCaptchaImageFromImgAttributeId(String id,ImageDataResultHandler handler)
+	{
+		mImageDataResultHandler = handler;
+		StringBuilder sb = new StringBuilder();
+		sb.append(jsElementsByAttributeName().toString());
+		sb.append("var img = getElementById('"+id+"');");
+		sb.append(jsDrawImage());
+		jsExecute(sb.toString());
 	}
 	
 	public void jsExecute(String javaScript)
