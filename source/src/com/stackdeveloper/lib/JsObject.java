@@ -43,10 +43,31 @@ public class JsObject
 	public void jsGetHtmlContent(WebViewHtmlContentHandler handler)
 	{
 		mWebViewHtmlContentHandler = handler; 
+		jsExecute("jsObject.onGetHtmlContent(document.documentElement.innerHTML);");
+	}
+	
+	public String jsElementsByAttributeName()
+	{
+		StringBuilder sb = new StringBuilder();
+		sb.append("function getElementsByAttributeName(tagName, attributeName, attributeValue) { ");
+		sb.append("  var i, n, objs=[], els=document.getElementsByTagName(tagName), len=els.length;");
+		sb.append("  for (i=0; i<len; i++) { ");
+		sb.append("    n = els[i][attributeName]; ");
+		sb.append("    if (n && (n==attributeValue)) { ");
+		sb.append("      objs.push(els[i]);");
+		sb.append("    }");
+		sb.append("  }");
+		sb.append("  return objs;");
+		sb.append("}");
+		return sb.toString();
+	}
+	
+	public void jsExecute(String javaScript)
+	{
 		StringBuilder sb = new StringBuilder();
 	    sb.append("javascript:");
 	    sb.append("{ ");
-	    sb.append(" jsObject.onGetHtmlContent(document.documentElement.innerHTML);");
+	    sb.append(javaScript);
 		sb.append("}");
 		mWebView.loadUrl(sb.toString());
 	}
