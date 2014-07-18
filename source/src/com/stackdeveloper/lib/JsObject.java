@@ -33,6 +33,10 @@ public class JsObject
 		mWebView.addJavascriptInterface(this, "jsObject");
 	}
 	
+	/**
+	 * alone can not be called!
+	 * @param base64Image
+	 */
 	@JavascriptInterface
 	public void getBase64ImageString(String base64Image)
 	{
@@ -53,6 +57,10 @@ public class JsObject
 		mImageDataResultHandler = handler;
 	}
 	
+	/**
+	 * alone can not be called!
+	 * @param html
+	 */
 	@JavascriptInterface
 	public void onGetHtmlContent(String html)
 	{
