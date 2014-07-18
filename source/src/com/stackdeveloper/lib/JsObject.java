@@ -28,7 +28,6 @@ public class JsObject
 		registerObject();
 	}
 	
-	@SuppressLint("JavascriptInterface")
 	public void registerObject()
 	{
 		mWebView.addJavascriptInterface(this, "jsObject");
@@ -112,7 +111,7 @@ public class JsObject
 		mImageDataResultHandler = handler;
 		StringBuilder sb = new StringBuilder();
 		sb.append(jsElementsByAttributeName().toString());
-		sb.append("var img = getElementById('"+id+"');");
+		sb.append("var img = document.getElementById('"+id+"');");
 		sb.append(jsDrawImage());
 		jsExecute(sb.toString());
 	}
