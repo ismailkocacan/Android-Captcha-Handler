@@ -89,6 +89,20 @@ public class JsObject
 		return sb.toString();
 	}
 	
+	public String jsElementsByName(String elementName,String elementValue)
+	{
+		StringBuilder sb = new StringBuilder();
+		sb.append("document.getElementsByName('"+elementName+"')[0].value ='" + elementValue + "';");
+		return sb.toString();
+	}
+	
+	public String jsSumbitFormByName(String name)
+	{
+		StringBuilder sb = new StringBuilder();
+		sb.append("document.forms['"+name+"'].submit();");
+		return sb.toString();
+	}
+	
 	public String jsDrawImage()
 	{
 		StringBuilder sb = new StringBuilder();
