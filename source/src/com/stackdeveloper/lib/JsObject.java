@@ -1,5 +1,6 @@
 package com.stackdeveloper.lib;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.webkit.JavascriptInterface;
 import android.webkit.WebView;
@@ -27,6 +28,7 @@ public class JsObject
 		registerObject();
 	}
 	
+	@SuppressLint("SetJavaScriptEnabled")
 	public void registerObject()
 	{
 		mWebView.getSettings().setDomStorageEnabled(true);
@@ -101,6 +103,13 @@ public class JsObject
 	{
 		StringBuilder sb = new StringBuilder();
 		sb.append("document.getElementsByName('"+elementName+"')[0].value ='" + elementValue + "';");
+		return sb.toString();
+	}
+	
+	public String jsAlert(String message)
+	{
+		StringBuilder sb = new StringBuilder();
+		sb.append("alert('"+message+"');");
 		return sb.toString();
 	}
 	
