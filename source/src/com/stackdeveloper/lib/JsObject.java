@@ -29,6 +29,7 @@ public class JsObject
 	
 	public void registerObject()
 	{
+		mWebView.getSettings().setJavaScriptEnabled(true);
 		mWebView.addJavascriptInterface(this, "jsObject");
 	}
 	
