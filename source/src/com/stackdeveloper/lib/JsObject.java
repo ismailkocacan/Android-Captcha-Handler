@@ -29,7 +29,9 @@ public class JsObject
 	
 	public void registerObject()
 	{
+		mWebView.getSettings().setDomStorageEnabled(true);
 		mWebView.getSettings().setJavaScriptEnabled(true);
+		mWebView.getSettings().setLoadsImagesAutomatically(true);
 		mWebView.addJavascriptInterface(this, "jsObject");
 	}
 	
