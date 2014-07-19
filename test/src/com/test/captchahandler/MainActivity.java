@@ -3,9 +3,13 @@ package com.test.captchahandler;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
+import android.webkit.WebView;
 import android.widget.ImageView;
 
+import com.stackdeveloper.lib.CustomWebChromeClient;
+import com.stackdeveloper.lib.CustomWebViewClient;
 import com.stackdeveloper.lib.HandlerImageDataResult;
+import com.stackdeveloper.lib.HandlerPageLoad;
 import com.stackdeveloper.lib.ImageUtil;
 import com.stackdeveloper.lib.JsObject;
 
@@ -33,6 +37,13 @@ public class MainActivity extends Activity
 		jsObject = new JsObject(this);
 		mMyHandlerImageDataResult = new MyHandlerImageDataResult();
 		jsObject.addImageDataResultHandler(mMyHandlerImageDataResult);
+		
+		CustomWebViewClient webViewClient = new CustomWebViewClient();
+		CustomWebChromeClient chromeClient = new CustomWebChromeClient();
+		
+		jsObject.getWebView().setWebViewClient(webViewClient);
+		jsObject.getWebView().setWebChromeClient(chromeClient);
+		
 		mImgCaptcha = (ImageView)findViewById(R.id.imgCaptcha);	
 	}
 
