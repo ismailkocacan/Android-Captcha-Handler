@@ -4,4 +4,26 @@
     android:layout_height="match_parent"
     tools:context="${packageName}.${activityClass}" >
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/btnGetCaptcha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Get Captcha Image !" 
+            android:onClick="btnGetCaptchaOnClick"/>
+
+        <ImageView
+            android:id="@+id/imgCaptcha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_launcher" />
+
+    </LinearLayout>
+
 </RelativeLayout>
