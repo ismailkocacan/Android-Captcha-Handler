@@ -7,7 +7,7 @@ import android.webkit.WebViewClient;
 
 public class CustomWebViewClient extends WebViewClient 
 {
-	public HandlerPageLoad mHandlerPageLoad;
+	private HandlerPageLoad mHandlerPageLoad;
 	
 	public CustomWebViewClient()
 	{
