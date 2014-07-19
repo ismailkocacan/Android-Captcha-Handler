@@ -32,6 +32,11 @@ public class JsObject
 		mWebView.addJavascriptInterface(this, "jsObject");
 	}
 	
+	public WebView getWebView() 
+	{
+		return mWebView;
+	}
+
 	/**
 	 * alone can not be called!
 	 * @param base64Image
