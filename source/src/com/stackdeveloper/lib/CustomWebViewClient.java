@@ -7,6 +7,23 @@ import android.webkit.WebViewClient;
 
 public class CustomWebViewClient extends WebViewClient 
 {
+	public HandlerPageLoad mHandlerPageLoad;
+	
+	public CustomWebViewClient()
+	{
+		
+	}
+	
+	public CustomWebViewClient(HandlerPageLoad handler)
+	{
+		mHandlerPageLoad = handler;
+	}
+	
+	public void addHandlerPageLoad(HandlerPageLoad handler)
+	{
+		mHandlerPageLoad = handler;
+	}
+	
 	@Override
 	public void onReceivedSslError(WebView view, SslErrorHandler handler,SslError error) 
 	{
@@ -17,5 +34,6 @@ public class CustomWebViewClient extends WebViewClient
 	public void onPageFinished(WebView view, String url) 
 	{
 		super.onPageFinished(view, url);
+		if (mHandlerPageLoad != null) mHandlerPageLoad.onPageLoad(view, url);
 	}
 }
