@@ -123,6 +123,7 @@ public class JsObject
 	public String jsDrawImage()
 	{
 		StringBuilder sb = new StringBuilder();
+		sb.append(JsToDataUrl.buidScript());
 		sb.append("var canvas = document.createElement(\"canvas\");");
 		sb.append("document.body.appendChild(canvas);");
 		sb.append("canvas.width = img.width;");
