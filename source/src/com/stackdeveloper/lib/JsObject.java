@@ -1,6 +1,5 @@
 package com.stackdeveloper.lib;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.webkit.JavascriptInterface;
 import android.webkit.WebView;
@@ -11,8 +10,8 @@ public class JsObject
 	private Context mContext;
 	private WebView mWebView;
 	private byte[] mDecodedImage;
-	private ImageDataResultHandler mImageDataResultHandler;
-	private WebViewHtmlContentHandler mWebViewHtmlContentHandler;
+	private HandlerImageDataResult mImageDataResultHandler;
+	private HandlerWebViewHtmlContent mWebViewHtmlContentHandler;
 	
 	public JsObject(Context context)
 	{
@@ -52,7 +51,7 @@ public class JsObject
 		}
 	}
 	
-	public void addImageDataResultHandler(ImageDataResultHandler handler)
+	public void addImageDataResultHandler(HandlerImageDataResult handler)
 	{
 		mImageDataResultHandler = handler;
 	}
@@ -68,7 +67,7 @@ public class JsObject
 		  mWebViewHtmlContentHandler.onGetHtmlContent(html);
 	}
  
-	public void jsGetHtmlContent(WebViewHtmlContentHandler handler)
+	public void jsGetHtmlContent(HandlerWebViewHtmlContent handler)
 	{
 		mWebViewHtmlContentHandler = handler; 
 		jsExecute("jsObject.onGetHtmlContent(document.documentElement.innerHTML);");
@@ -104,7 +103,7 @@ public class JsObject
 		return sb.toString();
 	}
 	
-	public void getCaptchaImageFromImgAttributeSrc(String src,ImageDataResultHandler handler)
+	public void getCaptchaImageFromImgAttributeSrc(String src,HandlerImageDataResult handler)
 	{
 		mImageDataResultHandler = handler;
 		StringBuilder sb = new StringBuilder();
@@ -114,7 +113,7 @@ public class JsObject
 		jsExecute(sb.toString());
 	}
 	
-	public void getCaptchaImageFromImgAttributeId(String id,ImageDataResultHandler handler)
+	public void getCaptchaImageFromImgAttributeId(String id,HandlerImageDataResult handler)
 	{
 		mImageDataResultHandler = handler;
 		StringBuilder sb = new StringBuilder();

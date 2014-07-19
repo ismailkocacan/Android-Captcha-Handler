@@ -1,6 +1,6 @@
 package com.stackdeveloper.lib;
 
-public interface WebViewHtmlContentHandler 
+public interface HandlerWebViewHtmlContent 
 {
 	void onGetHtmlContent(String htmlContent);
 }

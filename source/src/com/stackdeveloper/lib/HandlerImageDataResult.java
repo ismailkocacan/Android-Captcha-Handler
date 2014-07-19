@@ -1,6 +1,6 @@
 package com.stackdeveloper.lib;
 
-public interface ImageDataResultHandler 
+public interface HandlerImageDataResult 
 {
 	void onConvertComplete(byte[] imageData);
 }
