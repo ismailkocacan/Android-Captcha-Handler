@@ -133,6 +133,16 @@ public class JsObject
 		jsExecute(sb.toString());
 	}
 	
+	public void getCaptchaImageFromImgAttributeAlt(String alt,HandlerImageDataResult handler)
+	{
+		mImageDataResultHandler = handler;
+		StringBuilder sb = new StringBuilder();
+		sb.append(jsElementsByAttributeName().toString());
+		sb.append("var img = getElementsByAttributeName('img', 'alt', '"+alt+"')[0];");
+		sb.append(jsDrawImage());
+		jsExecute(sb.toString());
+	}
+	
 	public void getCaptchaImageFromImgAttributeId(String id,HandlerImageDataResult handler)
 	{
 		mImageDataResultHandler = handler;
