@@ -1,4 +1,1 @@
-Android-Captcha-Handler
-=======================
-
-Android Captcha Handler 
+Android Captcha Image Handler
