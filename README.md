@@ -13,8 +13,11 @@ Web forms containing security code(captcha) has been developed for automation wi
   - [JsObject] [1] class provides some JavaScript methods.
   - When you create an object from [JsObject] [1] class, automatically injects itself into the android WebView object.
 
+**How to use?**
 
-
+To see how that is implemented, you can see the [test project] [2].
 
 
 [1]:https://github.com/ismailkocacan/Android-Captcha-Handler/blob/master/source/src/com/stackdeveloper/lib/JsObject.java
+[2]:https://github.com/ismailkocacan/Android-Captcha-Handler/tree/master/test
+
