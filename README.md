@@ -23,6 +23,10 @@ Web forms containing security code(captcha) has been developed for automation wi
 
 To see how that is implemented, you can see the [test project] [2].
 
+**How do I?**
+
+  - [How to get html code of a webpage ? ] [5].
+
 
 **Projects using**
 
@@ -33,3 +37,4 @@ To see how that is implemented, you can see the [test project] [2].
 [2]:https://github.com/ismailkocacan/Android-Captcha-Handler/tree/master/test
 [3]:https://play.google.com/store/apps/details?id=tr.com.stackdeveloper.sgkprovizyon
 [4]:https://github.com/ismailkocacan/Android-Captcha-Handler/tree/master/lib
+[5]:https://github.com/ismailkocacan/Android-Captcha-Handler/wiki/How-to-get-html-code-of-a-webpage-%3F
