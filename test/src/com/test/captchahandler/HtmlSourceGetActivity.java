@@ -2,8 +2,10 @@ package com.test.captchahandler;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.View;
 import android.webkit.WebView;
 import android.widget.Toast;
+
 import com.stackdeveloper.lib.CustomWebChromeClient;
 import com.stackdeveloper.lib.CustomWebViewClient;
 import com.stackdeveloper.lib.HandlerPageLoad;
@@ -45,6 +47,7 @@ public class HtmlSourceGetActivity extends Activity
 		}	
 	}
 	
+	
 	private void initialize()
 	{
 		mWebView1 = (WebView)findViewById(R.id.webView1);
@@ -59,6 +62,11 @@ public class HtmlSourceGetActivity extends Activity
 		
 		CustomWebChromeClient chromeClient = new CustomWebChromeClient();
 		mJsObject.getWebView().setWebChromeClient(chromeClient);
+	}
+	
+	
+	public void btnGetHtmlCode(View sender)
+	{
 		mWebView1.loadUrl(URL);
 	}
 }

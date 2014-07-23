@@ -15,7 +15,8 @@
             android:id="@+id/btnGetHtmlCode"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Get Html Source Code" />
+            android:text="Get Html Source Code" 
+            android:onClick="btnGetHtmlCode"/>
 
         <WebView
             android:id="@+id/webView1"
