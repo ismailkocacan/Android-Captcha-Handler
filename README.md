@@ -25,7 +25,8 @@ To see how that is implemented, you can see the [test project] [2].
 
 **How do I?**
 
-  - [How to get html code of a webpage ? ] [5].
+  - [How to get html code of a webpage ? ] [5]
+  - [How Can I Display Captcha image in android imageview ?] [6]
 
 
 **Projects using**
@@ -38,3 +39,4 @@ To see how that is implemented, you can see the [test project] [2].
 [3]:https://play.google.com/store/apps/details?id=tr.com.stackdeveloper.sgkprovizyon
 [4]:https://github.com/ismailkocacan/Android-Captcha-Handler/tree/master/lib
 [5]:https://github.com/ismailkocacan/Android-Captcha-Handler/wiki/How-to-get-html-code-of-a-webpage-%3F
+[6]:https://github.com/ismailkocacan/Android-Captcha-Handler/wiki/How-Can-I-Display-Captcha-image-in-android-imageview-%3F
