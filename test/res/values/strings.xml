@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <string name="app_name">testcaptchahandler</string>
     <string name="title_activity_main">Captcha Handler Demo</string>
+    <string name="title_activity_html_source_get">HtmlSourceGetActivity</string>
+    <string name="hello_world">Hello world!</string>
+
 </resources>
