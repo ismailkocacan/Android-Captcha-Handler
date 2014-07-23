@@ -12,6 +12,8 @@ import com.stackdeveloper.lib.JsObject;
 
 public class HtmlSourceGetActivity extends Activity 
 {
+	private final static String URL="http://ismailkocacan.blogspot.com.tr";
+	
 	private JsObject mJsObject;
 	private WebView mWebView1;
 	private MyWebViewPageLoadHandler mMyWebViewPageLoadHandler;
@@ -57,5 +59,6 @@ public class HtmlSourceGetActivity extends Activity
 		
 		CustomWebChromeClient chromeClient = new CustomWebChromeClient();
 		mJsObject.getWebView().setWebChromeClient(chromeClient);
+		mWebView1.loadUrl(URL);
 	}
 }
