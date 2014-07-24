@@ -35,13 +35,7 @@ To see how that is implemented, you can see the [test project] [2].
 [Sgk Sağlık Provizyon] [3]
 
 
-**Donation**
-<script src="https://www.paypalobjects.com/js/external/paypal-button.min.js?merchant=7SFDH3R3KRTR8"
-    data-button="donate"
-    data-name="My donation"
-    data-amount="1.00"
-    async
-></script>
+
 
 [1]:https://github.com/ismailkocacan/Android-Captcha-Handler/blob/master/source/src/com/stackdeveloper/lib/JsObject.java
 [2]:https://github.com/ismailkocacan/Android-Captcha-Handler/tree/master/test
